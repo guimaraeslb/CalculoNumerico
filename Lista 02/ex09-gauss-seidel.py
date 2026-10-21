@@ -4,8 +4,15 @@ def calcular_norma_diferenca(v1, v2):
   x1 = v1[0] - v2[0]
   x2 = v1[1] - v2[1]
   x3 = v1[2] - v2[2]
+  x4 = v1[3] - v2[3]
+  x5 = v1[4] - v2[4]
+  x6 = v1[5] - v2[5]
+  x7 = v1[6] - v2[6]
+  x8 = v1[7] - v2[7]
+  x9 = v1[8] - v2[8]
+  x10 = v1[9] - v2[9]
 
-  norma_diferenca  = ((x1 ** 2) + (x2 ** 2) + (x3 ** 2))**0.5
+  norma_diferenca  = ((x1 ** 2) + (x2 ** 2) + (x3 ** 2) + (x4 ** 2) + (x5 ** 2) + (x6 ** 2) + (x7 ** 2) + (x8 ** 2) + (x9 ** 2) + (x10 ** 2) )**0.5
   return norma_diferenca
 
 def criterio_sassenfeld(matriz):
