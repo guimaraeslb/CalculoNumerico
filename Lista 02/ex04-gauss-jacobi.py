@@ -1,9 +1,12 @@
 from math import inf
 
-def calcular_norma_vetor(vetor):
-    norma = ((vetor[0] ** 2) + (vetor[1] ** 2) + (vetor[2] ** 2))**0.5
-    return norma
+def calcular_norma_diferenca(v1, v2):
+  x1 = v1[0] - v2[0]
+  x2 = v1[1] - v2[1]
+  x3 = v1[2] - v2[2]
 
+  norma_diferenca  = ((x1 ** 2) + (x2 ** 2) + (x3 ** 2))**0.5
+  return norma_diferenca
 def criterio_norma_euclidiana(matriz):
     linhas = len(matriz)
     colunas = linhas
@@ -48,7 +51,7 @@ def main():
     if(criterio_norma_euclidiana(matriz_coeficientes) < 1 or criterio_norma_linhas(matriz_coeficientes) < 1 or criterio_norma_colunas(matriz_coeficientes) < 1):
         print("Converge!")
         x = []
-        x.append([0,0,0])
+        x.append([-2.4,5,0.3])
 
         for i in range(1, 10000):
             size = len(x)
@@ -57,7 +60,8 @@ def main():
             x3 = ((-2*x[size-1][0])+ (3*x[size-1][1]) - 1)/10
             x.append([x1,x2,x3])
 
-            if(calcular_norma_vetor(x[len(x) - 1]) - calcular_norma_vetor(x[len(x) - 2]) > -0.01 and calcular_norma_vetor(x[len(x) - 1]) - calcular_norma_vetor(x[len(x) - 2]) < 0.01):
+            if(calcular_norma_diferenca(x[len(x) - 1], x[len(x) - 2]) > -0.01 and calcular_norma_diferenca(x[len(x) - 1], x[len(x) - 2]) < 0.01):
+                print(i)
                 break;
 
         print(x[len(x)-1][0], x[len(x)-1][1], x[len(x)-1][2])
